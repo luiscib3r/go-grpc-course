@@ -1,0 +1,23 @@
+http:
+  middlewares:
+    testHeader:
+      headers:
+        accessControlAllowMethods:
+          - GET
+          - OPTIONS
+          - PUT
+          - POST
+          - DELETE
+        accessControlAllowOrigin: "*"
+        accessControlMaxAge: 100
+        addVaryHeader: true
+  routers:
+    routerTest:
+      service: srv-grpc
+      rule: Host(`grpcback.local`)
+
+  services:
+    srv-grpc:
+      loadBalancer:
+        servers:
+        - url: h2c://localhost:50051
