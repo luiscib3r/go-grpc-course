@@ -40,7 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    _channel = GrpcWebClientChannel.xhr(Uri.parse('http://localhost:8080/'));
+    _channel = GrpcWebClientChannel.xhr(
+        Uri.parse('https://luisciber-grpc-test.herokuapp.com/'));
 
     _serviceClient = GreetServiceClient(_channel);
 
