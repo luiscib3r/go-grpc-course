@@ -6,6 +6,9 @@ option go_package = "greet/greetpb";
 
 service GreetService {
   rpc Greet(GreetRequest) returns (GreetResponse) {}
+
+  // Server Streaming
+  rpc GreetManyTimes(GreetRequest) returns (stream GreetResponse) {}
 }
 
 message Greeting {

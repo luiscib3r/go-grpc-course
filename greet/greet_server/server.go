@@ -5,16 +5,18 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"strconv"
+	"time"
 
-	"github.com/correaleyval/grpc-go-course/greet/greetpb"
+	pb "github.com/correaleyval/grpc-go-course/greet/greetpb"
 	"google.golang.org/grpc"
 )
 
 type server struct {
-	greetpb.UnimplementedGreetServiceServer
+	pb.UnimplementedGreetServiceServer
 }
 
-func (s *server) Greet(ctx context.Context, req *greetpb.GreetRequest) (resp *greetpb.GreetResponse, err error) {
+func (s *server) Greet(ctx context.Context, req *pb.GreetRequest) (resp *pb.GreetResponse, err error) {
 	fmt.Printf("Greet function was invoked with %v\n", req)
 
 	firstName := req.GetGreeting().GetFirstName()
@@ -22,11 +24,28 @@ func (s *server) Greet(ctx context.Context, req *greetpb.GreetRequest) (resp *gr
 
 	result := "Hello " + firstName + " " + lastName
 
-	res := &greetpb.GreetResponse{
+	res := &pb.GreetResponse{
 		Result: result,
 	}
 
 	return res, nil
+}
+
+func (s *server) GreetManyTimes(req *pb.GreetRequest, stream pb.GreetService_GreetManyTimesServer) error {
+	fmt.Printf("GreetManyTimes function was invoked with %v\n", req)
+	firstName := req.GetGreeting().GetFirstName()
+
+	for i := 0; i < 10; i++ {
+		result := "Hello " + firstName + " number " + strconv.Itoa(i)
+		res := &pb.GreetResponse{
+			Result: result,
+		}
+
+		stream.Send(res)
+		time.Sleep(1 * time.Second)
+	}
+
+	return nil
 }
 
 func main() {
@@ -40,7 +59,7 @@ func main() {
 
 	s := grpc.NewServer()
 
-	greetpb.RegisterGreetServiceServer(s, &server{})
+	pb.RegisterGreetServiceServer(s, &server{})
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve: %v", err)
