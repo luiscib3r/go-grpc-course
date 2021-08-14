@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class SumRequest extends $pb.GeneratedMessage {
@@ -115,5 +116,99 @@ class SumResponse extends $pb.GeneratedMessage {
   $core.bool hasSumResult() => $_has(0);
   @$pb.TagNumber(1)
   void clearSumResult() => clearField(1);
+}
+
+class PrimeNumberDecompositionRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PrimeNumberDecompositionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'calculator'), createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'number')
+    ..hasRequiredFields = false
+  ;
+
+  PrimeNumberDecompositionRequest._() : super();
+  factory PrimeNumberDecompositionRequest({
+    $fixnum.Int64? number,
+  }) {
+    final _result = create();
+    if (number != null) {
+      _result.number = number;
+    }
+    return _result;
+  }
+  factory PrimeNumberDecompositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PrimeNumberDecompositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PrimeNumberDecompositionRequest clone() => PrimeNumberDecompositionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PrimeNumberDecompositionRequest copyWith(void Function(PrimeNumberDecompositionRequest) updates) => super.copyWith((message) => updates(message as PrimeNumberDecompositionRequest)) as PrimeNumberDecompositionRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PrimeNumberDecompositionRequest create() => PrimeNumberDecompositionRequest._();
+  PrimeNumberDecompositionRequest createEmptyInstance() => create();
+  static $pb.PbList<PrimeNumberDecompositionRequest> createRepeated() => $pb.PbList<PrimeNumberDecompositionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PrimeNumberDecompositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PrimeNumberDecompositionRequest>(create);
+  static PrimeNumberDecompositionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get number => $_getI64(0);
+  @$pb.TagNumber(1)
+  set number($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNumber() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNumber() => clearField(1);
+}
+
+class PrimeNumberDecompositionResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PrimeNumberDecompositionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'calculator'), createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'primeFactor')
+    ..hasRequiredFields = false
+  ;
+
+  PrimeNumberDecompositionResponse._() : super();
+  factory PrimeNumberDecompositionResponse({
+    $fixnum.Int64? primeFactor,
+  }) {
+    final _result = create();
+    if (primeFactor != null) {
+      _result.primeFactor = primeFactor;
+    }
+    return _result;
+  }
+  factory PrimeNumberDecompositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PrimeNumberDecompositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PrimeNumberDecompositionResponse clone() => PrimeNumberDecompositionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PrimeNumberDecompositionResponse copyWith(void Function(PrimeNumberDecompositionResponse) updates) => super.copyWith((message) => updates(message as PrimeNumberDecompositionResponse)) as PrimeNumberDecompositionResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PrimeNumberDecompositionResponse create() => PrimeNumberDecompositionResponse._();
+  PrimeNumberDecompositionResponse createEmptyInstance() => create();
+  static $pb.PbList<PrimeNumberDecompositionResponse> createRepeated() => $pb.PbList<PrimeNumberDecompositionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PrimeNumberDecompositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PrimeNumberDecompositionResponse>(create);
+  static PrimeNumberDecompositionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get primeFactor => $_getI64(0);
+  @$pb.TagNumber(1)
+  set primeFactor($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPrimeFactor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrimeFactor() => clearField(1);
 }
 

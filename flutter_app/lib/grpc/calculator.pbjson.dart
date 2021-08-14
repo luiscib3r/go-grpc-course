@@ -29,3 +29,23 @@ const SumResponse$json = const {
 
 /// Descriptor for `SumResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sumResponseDescriptor = $convert.base64Decode('CgtTdW1SZXNwb25zZRIdCgpzdW1fcmVzdWx0GAEgASgFUglzdW1SZXN1bHQ=');
+@$core.Deprecated('Use primeNumberDecompositionRequestDescriptor instead')
+const PrimeNumberDecompositionRequest$json = const {
+  '1': 'PrimeNumberDecompositionRequest',
+  '2': const [
+    const {'1': 'number', '3': 1, '4': 1, '5': 3, '10': 'number'},
+  ],
+};
+
+/// Descriptor for `PrimeNumberDecompositionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List primeNumberDecompositionRequestDescriptor = $convert.base64Decode('Ch9QcmltZU51bWJlckRlY29tcG9zaXRpb25SZXF1ZXN0EhYKBm51bWJlchgBIAEoA1IGbnVtYmVy');
+@$core.Deprecated('Use primeNumberDecompositionResponseDescriptor instead')
+const PrimeNumberDecompositionResponse$json = const {
+  '1': 'PrimeNumberDecompositionResponse',
+  '2': const [
+    const {'1': 'prime_factor', '3': 1, '4': 1, '5': 3, '10': 'primeFactor'},
+  ],
+};
+
+/// Descriptor for `PrimeNumberDecompositionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List primeNumberDecompositionResponseDescriptor = $convert.base64Decode('CiBQcmltZU51bWJlckRlY29tcG9zaXRpb25SZXNwb25zZRIhCgxwcmltZV9mYWN0b3IYASABKANSC3ByaW1lRmFjdG9y');
