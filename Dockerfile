@@ -14,6 +14,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server greet/gree
 
 FROM scratch
 COPY --from=builder /app/server /server
-RUN chmod +x /server
 
 CMD ["/server"]
